@@ -43,14 +43,14 @@ export const COMMANDS: Command[] = [
   },
   {
     name: "usage",
-    description: "open billing portal in your browser",
+    description: "Open billing portal in your browser",
     value: "/usage",
   },
   {
     name: "exit",
     description: "Quit the application",
     value: "/exit",
-    action: (context) => {
+    action: (context: CommandContext) => {
       context.exit();
     },
   },
