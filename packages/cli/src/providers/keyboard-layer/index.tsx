@@ -74,7 +74,7 @@ export function KeyboardLayerProvider({
     if (!key.ctrl || key.name !== "c") return;
 
     const currentstack = stackRef.current;
-    for (let i = currentstack.length; i >= 0; i--) {
+    for (let i = currentstack.length - 1; i >= 0; i--) {
       const layerId = currentstack[i];
       const responder = responders.current.get(layerId!);
       if (responder && responder()) {

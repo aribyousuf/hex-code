@@ -47,7 +47,13 @@ export function DialogSearchList<T>({
     if (scrollbox) {
       scrollbox.scrollTo(0);
     }
-  }, []);
+
+    const newFiltered = text
+      ? items.filter((item) => filterFn(item, text))
+      : items;
+    const item = newFiltered[0];
+    if (item && onHighlight) onHighlight(item);
+  }, [items, filterFn, onHighlight]);
 
   const filtered = searchValue
     ? items.filter((item) => filterFn(item, searchValue))
